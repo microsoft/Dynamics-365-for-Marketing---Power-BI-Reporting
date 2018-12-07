@@ -1,11 +1,23 @@
 # Overview
+Instructions for this release
+=============================
+After opening a template (*.pbit file) in Power BI desktop and filling the parameters please use the drop down option on the "Load" button and press Edit. Then navigate to File / Option and Settings/Options. Under Current File/Privacy select the option "Ignore Privacy Levels". Without that setting the Report will not be able to load data from the different stores.
 
+What's new in this release
+==========================
+Removed parameter for max amount of interaction files to load, instead new parameter that specifies for how many days back from today the report should load interaction data. Leave that field empty to load interaction from the start of the org (best start with a smaller number and use the Interaction Data Flow report page to identify a good range).
+Central interaction loading query, with customizable selection from available Interaction.
+Corrected OOTB relations
+Improved interaction data flow views to help selecting date range and relevant interactions for custom report, * * Added report view for email leaderboard and updated other views
+
+Description
+===========
 Download these Power BI templates to start building custom analytics and reports based on your Dynamics 365 for Marketing data. These templates will help you to connect to your Dynamics 365 instance and access its data. The download includes the following templates:
-
 Power BI template for Dynamics 365 for Marketing: Includes the code required to connect to your Dynamics 365 for Marketing data, and also includes functions that you can call to load entity and interaction data with just one line of code. This template provides a basic starting point for building your own custom reports.
 
-Sample email marketing analytics report: Provides a comprehensive report of your email marketing results, including detailed analytics, charts, and views spread across multiple report pages. You can use this template as-is, or as inspiration for designing your own reports.
-
+About the sample for an email marketing analytics report
+========================================================
+This sample provides a comprehensive report of your email marketing results, including detailed analytics, charts, and views spread across multiple report pages. You can use this template as-is, or as inspiration for designing your own reports.
 
 # Contributing
 
