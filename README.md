@@ -1,4 +1,7 @@
 # Overview
+
+[Documentation on the setup in Dynamics 365 for Marketing](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/marketing/custom-analytics#set-up--and-connect-it-to-marketing)
+
 Instructions for this release
 =============================
 After opening a template (*.pbit file) in Power BI desktop and filling the parameters please use the drop down option on the "Load" button and press Edit. Then navigate to File / Option and Settings/Options. Under Current File/Privacy select the option "Ignore Privacy Levels". Without that setting the Report will not be able to load data from the different stores.
