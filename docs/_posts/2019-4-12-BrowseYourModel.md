@@ -4,4 +4,4 @@ title: Browse your meta model
 ---
 
 
-[<img src="{{ site.baseurl }}/docs/images/DataModel-InteractionDataModelBrowser.png"/>]
+[<img src="{{ site.baseurl }}/images/DataModel-InteractionDataModelBrowser.png"/>]
