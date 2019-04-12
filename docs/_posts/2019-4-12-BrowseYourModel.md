@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Hello World!
+title: Browse your meta model
 ---
 
 
-({{ site.baseurl }}/docs/images/DataModel-InteractionDataModelBrowser.png)
+[<img src="{{ site.baseurl }}/docs/images/DataModel-InteractionDataModelBrowser.png"/>]
