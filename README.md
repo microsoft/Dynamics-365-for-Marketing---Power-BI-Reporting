@@ -1,6 +1,7 @@
 # Overview
+[Portal with all the details on the resources in this repository and on Marketing Analytics with Power BI] (http://powerbi.dynamicsmarketing.org)
 
-[Documentation on the setup in Dynamics 365 for Marketing](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/marketing/custom-analytics#set-up--and-connect-it-to-marketing)
+[Documentation on the setup in Dynamics 365 Marketing](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/marketing/custom-analytics#set-up--and-connect-it-to-marketing)
 
 [Interactions avaliable building reports](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/marketing/developer/retrieve-interactions-contact#action-parameters)
 
