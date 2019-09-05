@@ -1,0 +1,4513 @@
+{
+  "name": "MarketingInteractionModel",
+  "description": "DPLX model for marketing interactions",
+  "version": "1.0",
+  "entities": [
+    {
+      "$type": "LocalEntity",
+      "name": "ActivityContactBlocked",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Reason",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ActivityContactBlockedConsent",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ActivityContactBlockedExternalConsent",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ActivityContactBlockedSuppression",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ActivityContactDispatched",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ActivityContactProcessingFailed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ConfirmationRequest",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ConfirmationRequestId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "ChannelType",
+          "dataType": "string"
+        },
+        {
+          "name": "ChannelMessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "RequestType",
+          "dataType": "string"
+        },
+        {
+          "name": "RequestObjectId",
+          "dataType": "string"
+        },
+        {
+          "name": "RequestObjectName",
+          "dataType": "string"
+        },
+        {
+          "name": "RequestObjectValue",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ConfirmationResponse",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ConfirmationRequestId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "ConfirmationValue",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "ContactDeleted",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "DeletedContactId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "CreateCrmActivityContactProcessed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "CreateCustomChannelActivityContactProcessed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "CreateLeadActivityContactProcessed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "CustomChannelResponse",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "EntityId",
+          "dataType": "string"
+        },
+        {
+          "name": "EntityType",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "ResponseType",
+          "dataType": "string"
+        },
+        {
+          "name": "TriggerKeyword",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "CustomerJourneyContactRecordUpdated",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "CustomerJourneyIterationStarted",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DomainNotOwnedByAnyone",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BlockedReason",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "DomainOwnedByDifferentOrganization",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BlockedReason",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlockBounced",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BounceCategory",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlocked",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BlockedReason",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlockedByUnsubscription",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlockedByUser",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlockedDuplicateAddress",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlockedExternalConsentFailure",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlockedInactiveContact",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlockedMissingContactData",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailBlockedMissingRelatedData",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailClicked",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "LinkId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "LinkFriendlyName",
+          "dataType": "string"
+        },
+        {
+          "name": "OriginalLink",
+          "dataType": "string"
+        },
+        {
+          "name": "OriginalUrl",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailContainsBlacklistedLinks",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "BlacklistedLink",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailDelivered",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailFeedbackLoop",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailForwarded",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "SecondaryRecipientProfileId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "FormSubmissionId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailHardBounced",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BounceCategory",
+          "dataType": "string"
+        },
+        {
+          "name": "RemoteBounce",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailHardRemoteBounced",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BounceCategory",
+          "dataType": "string"
+        },
+        {
+          "name": "RemoteBounce",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailOpened",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailSendingFailed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailSent",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailSoftBounced",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BounceCategory",
+          "dataType": "string"
+        },
+        {
+          "name": "RemoteBounce",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailSoftRemoteBounced",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BounceCategory",
+          "dataType": "string"
+        },
+        {
+          "name": "RemoteBounce",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EmailSubscriptionSubmit",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "DeviceType",
+          "dataType": "string"
+        },
+        {
+          "name": "DeviceBrand",
+          "dataType": "string"
+        },
+        {
+          "name": "DeviceModel",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EntityDeleted",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "DeletedEntityType",
+          "dataType": "string"
+        },
+        {
+          "name": "DeletedEntityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EventCheckIn",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "EventId",
+          "dataType": "string"
+        },
+        {
+          "name": "EventCheckInId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EventRegistration",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "EventId",
+          "dataType": "string"
+        },
+        {
+          "name": "EventRegistrationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "EventRegistrationCanceled",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "EventId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "FormSubmitted",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "PageId",
+          "dataType": "string"
+        },
+        {
+          "name": "FormId",
+          "dataType": "string"
+        },
+        {
+          "name": "FormName",
+          "dataType": "string"
+        },
+        {
+          "name": "FormSubmissionId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Result",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactMatchingResult",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadMatchingResult",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "ReferrerUri",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactFailureMessage",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadFailureMessage",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        },
+        {
+          "name": "SubmittedValues",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "FormVisited",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "PageId",
+          "dataType": "string"
+        },
+        {
+          "name": "FormId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "ReferrerUri",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "InvalidRecipientAddress",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BlockedReason",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "InvalidReplyToAddress",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BlockedReason",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "InvalidSenderAddress",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "BlockedReason",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "LeadScoreBoost",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "BoostValue",
+          "dataType": "int64"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "LinkedInFormSubmission",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "LinkedInCampaignId",
+          "dataType": "string"
+        },
+        {
+          "name": "LinkedInFormId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "OutOfEmailCredits",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "UsageType",
+          "dataType": "string"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "PassThroughActivityContactProcessed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "RedirectLinkClicked",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "LinkId",
+          "dataType": "string"
+        },
+        {
+          "name": "Link",
+          "dataType": "string"
+        },
+        {
+          "name": "OriginalUrl",
+          "dataType": "string"
+        },
+        {
+          "name": "ReferrerUri",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "SchedulerActivityContactProcessed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Path",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "SegmentMembersCountChanged",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SegmentId",
+          "dataType": "string"
+        },
+        {
+          "name": "MembersCount",
+          "dataType": "int64"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "SegmentRelationshipEdited",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "SegmentId",
+          "dataType": "string"
+        },
+        {
+          "name": "RelationshipOperatorAction",
+          "dataType": "string"
+        },
+        {
+          "name": "Result",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "SegmentSubscribed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "SegmentId",
+          "dataType": "string"
+        },
+        {
+          "name": "FormSubmissionId",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "SegmentUnsubscribed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailDomain",
+          "dataType": "string"
+        },
+        {
+          "name": "EmailAddressUsed",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "SegmentId",
+          "dataType": "string"
+        },
+        {
+          "name": "FormSubmissionId",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "SessionRegistrationCanceled",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "SplitterActivityContactProcessed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "NextActivityId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "SurveyResponse",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "SurveyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "Score",
+          "dataType": "double"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "TriggerActivityContactProcessed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Path",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "TriggerCrmWorkflowActivityContactProcessed",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "ActivityId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "WorkflowId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "WebsiteClicked",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "WebsiteId",
+          "dataType": "string"
+        },
+        {
+          "name": "PageAddress",
+          "dataType": "string"
+        },
+        {
+          "name": "PageId",
+          "dataType": "string"
+        },
+        {
+          "name": "ReferrerUri",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "Link",
+          "dataType": "string"
+        },
+        {
+          "name": "LinkFriendlyName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "$type": "LocalEntity",
+      "name": "WebsiteVisited",
+      "attributes": [
+        {
+          "name": "InteractionType",
+          "dataType": "string"
+        },
+        {
+          "name": "OrganizationId",
+          "dataType": "string"
+        },
+        {
+          "name": "Timestamp",
+          "dataType": "dateTimeOffset"
+        },
+        {
+          "name": "InternalMarketingInteractionId",
+          "dataType": "string"
+        },
+        {
+          "name": "Version",
+          "dataType": "int64"
+        },
+        {
+          "name": "CustomerJourneyId",
+          "dataType": "string"
+        },
+        {
+          "name": "CustomerJourneyIterationId",
+          "dataType": "string"
+        },
+        {
+          "name": "MessageId",
+          "dataType": "string"
+        },
+        {
+          "name": "WebsiteId",
+          "dataType": "string"
+        },
+        {
+          "name": "PageAddress",
+          "dataType": "string"
+        },
+        {
+          "name": "PageId",
+          "dataType": "string"
+        },
+        {
+          "name": "ReferrerUri",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchPhrase",
+          "dataType": "string"
+        },
+        {
+          "name": "SearchEngineName",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorId",
+          "dataType": "string"
+        },
+        {
+          "name": "SessionId",
+          "dataType": "string"
+        },
+        {
+          "name": "ContactId",
+          "dataType": "string"
+        },
+        {
+          "name": "AccountId",
+          "dataType": "string"
+        },
+        {
+          "name": "CountryIsoCode",
+          "dataType": "string"
+        },
+        {
+          "name": "State",
+          "dataType": "string"
+        },
+        {
+          "name": "City",
+          "dataType": "string"
+        },
+        {
+          "name": "PostalCode",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserId",
+          "dataType": "string"
+        },
+        {
+          "name": "BrowserVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemId",
+          "dataType": "string"
+        },
+        {
+          "name": "OperatingSystemVersion",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitDuration",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorReturningStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "SendingId",
+          "dataType": "string"
+        },
+        {
+          "name": "VisitorAnonymousStatus",
+          "dataType": "string"
+        },
+        {
+          "name": "LeadId",
+          "dataType": "string"
+        }
+      ]
+    }
+  ]
+}
