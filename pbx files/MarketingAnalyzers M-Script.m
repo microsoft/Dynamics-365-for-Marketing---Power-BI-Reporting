@@ -6,14 +6,22 @@ shared GetCleanedCRMOrgUrl = ()=> let
 in
     #"Trimmed Text";
 
-shared GetCDSTHubSource = ()=>
-let
-    Source = Cds.Contents(GetCleanedCRMOrgUrl(), [ReorderColumns=null, UseFormattedValue=null])
+shared #"#CDSTHubSource" = let
+    Url = #"@CRMOrgUrl",
+    //TrimmedUrl = Text.TrimEnd(Text.Trim(Url), "/"), // We cannot trim the URL because then data sourcewill not be recognized
+    Source = Cds.Contents(Url, [ReorderColumns=null, UseFormattedValue=null])
+in
+    Source;
+
+shared #"#CDSTEntitySource" = let
+    Url = #"@CRMOrgUrl",
+    //TrimmedUrl = Text.TrimEnd(Text.Trim(Url), "/"), // We cannot trim the URL because then data sourcewill not be recognized
+    Source = Cds.Entities(Url, [ReorderColumns=null, UseFormattedValue=true])
 in
     Source;
 
 shared #"#CDST_CDMProfiles" = let
-    Source = GetCDSTHubSource(),
+    Source = #"#CDSTHubSource",
     
     CustomProfiles = Source{[Group="cdm"]}[Data],
     CoreTable = Table.SelectColumns(CustomProfiles,{"EntitySetName", "SchemaName"}),
@@ -22,7 +30,7 @@ in
     Result;
 
 shared #"#CDST_CustomProfiles" = let
-    Source = GetCDSTHubSource(),
+    Source = #"#CDSTHubSource",
     
     CustomProfiles = Source{[Group="custom"]}[Data],
     #"Sorted Rows" = Table.Sort(CustomProfiles,{{"EntitySetName", Order.Ascending}}),
@@ -31,8 +39,20 @@ shared #"#CDST_CustomProfiles" = let
 in
     Result;
 
+[ Description = "Loads the table of profile instances for a specific custom Profile" ]
+shared GetCDST_EntityTable = let
+    Source = (#"schema name" as text) =>
+        let
+            Source = #"#CDSTEntitySource",
+            Entities = Source{[Group="entities"]}[Data],
+            DataTable = Entities{[SchemaName=#"schema name"]}[Data]
+        in
+            DataTable
+in
+    Source;
+
 shared #"#CDST_SystemProfiles" = let
-    Source = GetCDSTHubSource(),
+    Source = #"#CDSTHubSource",
     
     CustomProfiles = Source{[Group="system"]}[Data],
     CoreTable = Table.SelectColumns(CustomProfiles,{"Name"}),
@@ -43,7 +63,7 @@ in
 [ Description = "Loads the table of profile instances for a specific CDM Profile" ]
 shared GetCDST_CDMProfileTable = (#"schema name" as text) =>
         let
-            Source = GetCDSTHubSource(),
+            Source = #"#CDSTHubSource",
             Entities = Source{[Group="cdm"]}[Data],
             DataTable = Entities{[SchemaName=#"schema name"]}[Data]
         in
@@ -117,7 +137,7 @@ in
 [ Description = "Loads the table of profile instances for a specific custom Profile" ]
 shared GetCDST_CustomProfileTable = (#"schema name" as text) =>
         let
-            Source = GetCDSTHubSource(),
+            Source = #"#CDSTHubSource",
             Entities = Source{[Group="custom"]}[Data],
             DataTable = Entities{[SchemaName=#"schema name"]}[Data]
         in
@@ -236,18 +256,29 @@ in
 
 shared #"#StorageContainerContentIndex" = let
     Source = GetStorageContainerContent(),
-    #"Removed Content" = Table.RemoveColumns(Source,{"Content","Name","Date modified"}),
-    Result = Table.Buffer(#"Removed Content")
+    #"Removed Content" = Table.RemoveColumns(Source,{"Content","Name","Date modified"})
 in
-    Result;
+    #"Removed Content";
+
+shared #"#FilteredStorageContainerContentIndex" = let
+    Source = Table.NestedJoin(#"#StorageContainerContentIndex",{"Interaction Name"},#"!LoadedInteractions",{"Interaction Name"},"!LoadedInteractions",JoinKind.Inner),
+    #"Removed Columns" = Table.RemoveColumns(Source,{"!LoadedInteractions"}),
+    // Filter by the number of daysback
+    FilterByRecency = if (not (#"@LoadInteractionsForNumberOfDaysBack" is null))
+      then Table.SelectRows(#"Removed Columns", each [DaysFromToday] >= -#"@LoadInteractionsForNumberOfDaysBack")
+      else #"Removed Columns"
+in
+    FilterByRecency;
 
 shared LoadFileContent = (#"File Name" as text) =>
 
 let
     Source = #"#StorageContainers",
     #"Container" = Source{[Name=#"@AzureStorageBlobContainerName"]}[Data],
-    #"Removed Other Columns" = Table.SelectColumns(Container,{"Content", "Name"}),
-    Content = #"Removed Other Columns"{[Name=#"File Name"]}[Content]
+    #"ContentColumnOnly" = Table.SelectColumns(Container,{"Content", "Name"}),
+    Content = if(Table.Contains(#"ContentColumnOnly",[Name=#"File Name"])) 
+      then #"ContentColumnOnly"{[Name=#"File Name"]}[Content] 
+      else BinaryFormat.Null
 in
     Content;
 
@@ -260,7 +291,9 @@ in
     Content;
 
 shared #"%InteractionModel" = let
-    ModelFile = LoadFileContent("model.json"), 
+    StaticModelFile = LoadFileContent("modelStatic.json"), 
+    ModelFile = if (StaticModelFile <> BinaryFormat.Null) then StaticModelFile else LoadFileContent("model.json"), 
+
     #"Imported JSON" = Json.Document(ModelFile,1252),
     entities = #"Imported JSON"[entities],
     #"Converted to Table" = Table.FromList(entities, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
@@ -291,13 +324,14 @@ let
     #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"Attribute Name"}),
     #"Transposed Table" = Table.Transpose(#"Removed Other Columns"),
     #"Promoted Headers" = Table.PromoteHeaders(#"Transposed Table", [PromoteAllScalars=true]),
-    Result = Table.TransformColumnTypes(#"Promoted Headers",{{"Timestamp", type datetimezone}})
+    Result = Table.TransformColumnTypes(#"Promoted Headers",{{"Timestamp", type datetimezone}}, "en-US")
 in
     Result;
 
 shared ParseInteractionFileContent = (content as binary) =>
   let
-    #"Imported CSV" = Csv.Document(content,[Delimiter=",", Encoding=1252, QuoteStyle=QuoteStyle.None]),
+    // it is important to use QuotesStyle.Csv, because otherwise multiline parameters like in form submitted values will not be parsed  
+    #"Imported CSV" = Csv.Document(content,[Delimiter=",", Encoding=1252, QuoteStyle=QuoteStyle.Csv]),
     #"Promoted Headers" = Table.PromoteHeaders(#"Imported CSV", [PromoteAllScalars=true])
   in
     #"Promoted Headers";
@@ -319,10 +353,11 @@ in
 shared #"#FilteredStorageContainerContent" = let
     Source = FilterStorageContainerContent(null),
     #"Remove Columns" = Table.RemoveColumns(Source,{"Name", "Date modified"}),
-    Result = Table.Buffer(#"Remove Columns")
-
+    #"Merged Queries" = Table.NestedJoin(#"Remove Columns",{"Interaction Name"},#"!LoadedInteractions",{"Interaction Name"},"!LoadedInteractions",JoinKind.Inner),
+    #"Removed Columns" = Table.RemoveColumns(#"Merged Queries",{"!LoadedInteractions"})
+    //Result = Table.Buffer(#"Removed Columns")
 in
-    Result;
+    #"Removed Columns";
 
 shared GetInteractionTableData = (#"Interaction Name" as text) =>
        let
@@ -337,7 +372,8 @@ shared GetInteractionTableData = (#"Interaction Name" as text) =>
              GetDefaultInteractionTable(#"Interaction Name")
            else
              Table.ExpandTableColumn(#"ContentTable", "FileContent", Table.ColumnNames(ContentTable{0}[FileContent])),
-           #"Transformed" = Table.TransformColumnTypes(InteractionTable,{{"Timestamp", type datetimezone}}),
+           // Interction timestamp is stored in US datetimezone format in interaction store - this should be fixed going forward
+           #"Transformed" = Table.TransformColumnTypes(InteractionTable,{{"Timestamp", type datetimezone}}, "en-US"),
            #"Duplicated Column" = Table.DuplicateColumn(#"Transformed", "Timestamp", "Datestamp"),
            #"Datestamp" = Table.TransformColumns(#"Duplicated Column",{{"Datestamp", DateTime.Date, type date}}),
            #"RenameId" = Table.RenameColumns(#"Datestamp",{{"InternalMarketingInteractionId", "Id"}})          
@@ -414,17 +450,39 @@ shared InvalidRecipientAddress = let
 in
     Source;
 
+shared #"!ProductVersion" = let
+    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8slMKkosqlTSUTLUMzUw0DO0NDQwMFKK1YlWckosTnVJLEkMzi8tSk4txqbEMS8xp7IqtQhDLhYA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [Product = _t, Version = _t]),
+    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Product", type text}, {"Version", type text}}),
+    #"Added Custom" = Table.AddColumn(#"Changed Type", "Rendered", each [Product] & ": " & [Version])
+in
+    #"Added Custom";
+
+shared #"!KnownInteractions" = let
+    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("lVXbcuIwDP0XnvsTJaWz7NBpJ4HtQ6cPjiMSD47tlWW6/P3KAXpJnDR9JOdIPpKOxMvL4laSOio6ZdaQkLTUVh6gWtws9kJ7WLzejFH4lwdDM5irfwRohJ4fUQTnELxX1kyx75R3gmQzrfcJrYy5TH0vlO5xmbNX2Arip3L4G8DTBO5dLKFP6KSABurnRhAEGbZpQWl28GTbrBHGgP5B3AZENY/++YF0RR0D8LcNaOCaLQdpsdq5SgzK/Mpf87C7dhUksM9dtTyCbshLG4wcRSeA5WnnAUfhu+C0kizytqqihUaJayNiv+BS3yjvQXXeuc5ZkPiOmoOOTUpTM1Z3Lo8wfP4e8yvjl1rIg1aeE2yUOST0s9VYNqZadA9QlRy/sdYlUItvAqtU4C/+PjqRCObQWoJRyqMDkyiqAFOl9+4K0zDG7mn0nQh+I6UIpZeoXGfBULaqN1pDvCKpdV0dWU7WgDyszRDIoeahnJ09jWaChfXr5d63ZzX9ZyPyR3nV/742R6EVN14qp/iJlJ/fOU6ftnaCEQcBmCLEw1HwanNDbe/2Rf/FPXnXPjzIj4Ee92f/siEVfc39JLzfNmhD3cy6TTmnQJAUH/7Ykw+8iKc+aC5kTrYC6pb79gBtCegz9gvFs1enad3Scnm+UW5VDaZxYV3MVabRnfEjON8kHvxM3QGPcEqe5i2qup6Z5sLlv59ni4e9tm+zwp6hjF5Mtf8CDcz6+h8=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [#"Interaction Name" = _t, #"Load Data" = _t]),
+    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Interaction Name", type text}, {"Load Data", type logical}})
+in
+    #"Changed Type";
+
+shared #"!LoadedInteractions" = let
+    Source = #"!KnownInteractions",
+    #"Filtered Rows" = Table.SelectRows(Source, each ([Load Data] = true))
+in
+    #"Filtered Rows";
+
 [ Description = "Enter the URL of the CRM organization, like https://Contoso.crm4.dynamics.com" ]
-shared #"@CRMOrgUrl" = "https://mkttest1031sg807p09.crm10.dynamics.com" meta [IsParameterQuery=true, List={}, DefaultValue=..., Type="Text", IsParameterQueryRequired=true];
+shared #"@CRMOrgUrl" = "https://mktdemospring.crm.dynamics.com" meta [IsParameterQuery=true, List={}, DefaultValue=..., Type="Text", IsParameterQueryRequired=true];
 
 [ Description = "Enter the account name of your Azure Storage Account" ]
 shared #"@AzureStorageAccountName" = "cabeln2" meta [IsParameterQuery=true, List={}, DefaultValue=..., Type="Text", IsParameterQueryRequired=true];
 
 [ Description = "Enter the name of your Azure Storage Blob Container" ]
-shared #"@AzureStorageBlobContainerName" = "mkttest1031sg807p09" meta [IsParameterQuery=true, List={}, DefaultValue=..., Type="Text", IsParameterQueryRequired=true];
+shared #"@AzureStorageBlobContainerName" = "mktdemospring" meta [IsParameterQuery=true, List={}, DefaultValue=..., Type="Text", IsParameterQueryRequired=true];
 
 [ Description = "The number of days back in time for which interactions data will be loaded.#(lf)(If this parameter is empty no data range filter will be applied)" ]
-shared #"@LoadInteractionsForNumberOfDaysBack" = 10 meta [IsParameterQuery=true, List={7, 14, 31, 180, 365}, DefaultValue=7, Type="Number", IsParameterQueryRequired=false];
+shared #"@LoadInteractionsForNumberOfDaysBack" = 31 meta [IsParameterQuery=true, List={7, 14, 31, 180, 365}, DefaultValue=7, Type="Number", IsParameterQueryRequired=false];
+
+[ Description = "Enter the ID of the Marketing Application in your org" ]
+shared #"@MarketingAppId" = "c1b8fe39-53b4-e911-a968-000d3a13cead" meta [IsParameterQuery=true, List={"c4d57347-9420-e911-a9af-000d3a1cf0ea", "fe8e15b8-92b5-e811-a982-000d3a1ada5f", "1a030b50-8826-e911-a978-000d3a346695"}, DefaultValue="c4d57347-9420-e911-a9af-000d3a1cf0ea", Type="Text", IsParameterQueryRequired=true];
 
 shared Segments = let
     Accounts = GetCDST_CustomProfileTable("msdyncrm_segment"),
@@ -450,44 +508,20 @@ shared SegmentMembers = let
 in
     #"Renamed Columns";
 
-shared KPI_EmailUniqueEmailOpened = let
-    Source = EmailOpened,
-    #"Grouped Rows" = Table.Group(Source, {"MessageId", "ContactId", "AccountId"}, {{"Count", each Table.RowCount(_), type number}}),
-    #"Changed Type" = Table.TransformColumnTypes(#"Grouped Rows",{{"Count", Int64.Type}}),
-    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Count", "Unique Opens"}})
+shared InvalidSenderAddress = let
+    Source = GetInteractionTableData("InvalidSenderAddress")
 in
-    #"Renamed Columns";
+    Source;
 
-shared KPI_EmailUniqueEmailClicked = let
-    Source = EmailClicked,
-    #"Grouped Rows" = Table.Group(Source, {"MessageId", "ContactId", "AccountId"}, {{"Count", each Table.RowCount(_), type number}}),
-    #"Changed Type" = Table.TransformColumnTypes(#"Grouped Rows",{{"Count", Int64.Type}}),
-    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Count", "Unique Clicks"}})
+shared GetEntityFormUrl = let
+    Source = (#"entity" as text, #"id" as text) =>
+let
+    URL = @#"@CRMOrgUrl"&
+    "/main.aspx?appid="&#"@MarketingAppId"&
+    "&pagetype=entityrecord"&
+    "&etn="&#"entity"&
+    "&id="&#"id"
 in
-    #"Renamed Columns";
-
-shared KPI_JourneyUniqueEmailOpened = let
-    Source = EmailOpened,
-    #"Grouped Rows" = Table.Group(Source, {"MessageId", "CustomerJourneyId", "ContactId", "AccountId"}, {{"Count", each Table.RowCount(_), type number}}),
-    #"Changed Type" = Table.TransformColumnTypes(#"Grouped Rows",{{"Count", Int64.Type}}),
-    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Count", "Unique Opens"}})
+    URL
 in
-    #"Renamed Columns";
-
-shared KPI_JourneyUniqueEmailClicked = let
-    Source = EmailClicked,
-    #"Grouped Rows" = Table.Group(Source, {"MessageId", "CustomerJourneyId", "ContactId", "AccountId"}, {{"Count", each Table.RowCount(_), type number}})
-in
-    #"Grouped Rows";
-
-shared KPI_MarketingEmailKPIs = let
-    Source = MarketingEmails,
-    #"Removed Other Columns" = Table.SelectColumns(Source,{"MessageId", "Message Name"}),
-    #"Email Sent" = Table.NestedJoin(#"Removed Other Columns",{"MessageId"},EmailSent,{"MessageId"},"EmailSent",JoinKind.LeftOuter),
-    #"Aggregated EmailSent" = Table.AggregateTableColumn(#"Email Sent", "EmailSent", {{"Id", List.Count, "Email Sent"}}),
-    #"Email Opened" = Table.NestedJoin(#"Aggregated EmailSent",{"MessageId"},EmailOpened,{"MessageId"},"EmailOpened",JoinKind.LeftOuter),
-    #"Aggregated EmailOpened" = Table.AggregateTableColumn(#"Email Opened", "EmailOpened", {{"Id", List.Count, "Email Opened"}}),
-    #"Merged Queries2" = Table.NestedJoin(#"Aggregated EmailOpened",{"MessageId"},EmailClicked,{"MessageId"},"EmailClicked",JoinKind.LeftOuter),
-    #"Aggregated EmailClicked" = Table.AggregateTableColumn(#"Merged Queries2", "EmailClicked", {{"Id", List.Count, "Total Clicks"}})
-in
-    #"Aggregated EmailClicked";
+    Source;
