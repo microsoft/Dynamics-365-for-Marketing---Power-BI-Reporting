@@ -1,5 +1,5 @@
 # Overview
-[Portal with all the details about the resources in this repository - Marketing Analytics with Power BI](http://powerbi.dynamicsmarketing.org)
+[Portal with all the details about the resources in this repository - Marketing Analytics with Power BI](https://powerbi.dynamicsmarketing.org)
 
 [Documentation on the setup in Dynamics 365 Marketing](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/marketing/custom-analytics#set-up--and-connect-it-to-marketing)
 
