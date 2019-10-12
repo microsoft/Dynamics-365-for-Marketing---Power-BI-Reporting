@@ -290,9 +290,18 @@ let
 in
     Content;
 
+shared #"#StaticModel" = let
+    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("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", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [data = _t]),
+    #"Changed Type" = Table.TransformColumnTypes(Source,{{"data", type text}}),
+    data = #"Changed Type"{0}[data]
+in
+    data;
+
 shared #"%InteractionModel" = let
-    StaticModelFile = LoadFileContent("modelStatic.json"), 
-    ModelFile = if (StaticModelFile <> BinaryFormat.Null) then StaticModelFile else LoadFileContent("model.json"), 
+    //Use of embedded static model instead of loading file   
+    //StaticModelFile = LoadFileContent("modelStatic.json"), 
+    //ModelFile = if (StaticModelFile <> BinaryFormat.Null) then StaticModelFile else LoadFileContent("model.json"), 
+    ModelFile = #"#StaticModel",
 
     #"Imported JSON" = Json.Document(ModelFile,1252),
     entities = #"Imported JSON"[entities],
@@ -451,7 +460,7 @@ in
     Source;
 
 shared #"!ProductVersion" = let
-    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8slMKkosqlTSUTLUMzUw0DO0NDQwMFKK1YlWckosTnVJLEkMzi8tSk4txqbEMS8xp7IqtQhDLhYA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [Product = _t, Version = _t]),
+    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8slMKkosqlTSUTLUMzUw1DO0NDQwMFaK1YlWckosTnVJLEkMzi8tSk4thigxNIAoMQcrccxLzKmsSi2CaofKGSnFxgIA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [Product = _t, Version = _t]),
     #"Changed Type" = Table.TransformColumnTypes(Source,{{"Product", type text}, {"Version", type text}}),
     #"Added Custom" = Table.AddColumn(#"Changed Type", "Rendered", each [Product] & ": " & [Version])
 in
